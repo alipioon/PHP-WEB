@@ -1,4 +1,7 @@
 <?php
+
+require_once('../app/function/function.php');
+
     $serv = "localhost";
     $port = 5432;
     $bcod = "controle2022";
@@ -13,7 +16,7 @@
         echo 'erro na conexao ' . pg_last_error($conn);
         }
  
-    $stmt = $conn->prepare("select mm.nome,ms.menu_id,ms.subnome from menu_menu mm 
+    $stmt = $conn->prepare("select mm.nome,ms.menu_id,ms.subnome,ms.link from menu_menu mm 
                             join menu_submenu ms on ms.menu_id = mm.id  order by ms.menu_id");
     $stmt->execute();
   
@@ -22,13 +25,14 @@
          $var1 = $menu->nome;
          $var2 = $menu->menu_id;
          $var3 = $menu->subnome;
-         $aux2 = array($var1,$var2,$var3);
+         $var4 = $menu->link;
+         $aux2 = array($var1,$var2,$var3,$var4);
          array_push($aux, $aux2);
     };
   
     $_POST = $aux;
-    // var_dump($_POST);
-    // die();
+    // dd($_POST);
+    //  die();
 
 
     // for ($k=0; $k < count($_POST) ; $k++){ 

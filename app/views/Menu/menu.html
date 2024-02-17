@@ -56,7 +56,10 @@
                 <?php $novo = $_POST[$f][0]; ?> 
                   
                   <?php if($novo == $vl){ ?>
-                    <li><a href="#"><?php echo $_POST[$f][2]; ?></a></li>
+
+                    <!-- <?php $link = $_POST[$f][3]; ?> -->
+                    <!-- <li><a href="../../controller/menu/novos.php#"><?php echo $_POST[$f][2]; ?></a></li> -->
+                    <li><a href= <?php echo $_POST[$f][3]; ?>><?php echo $_POST[$f][2]; ?></a></li>
                   <?php } ?>
 
             <?php } ?>
