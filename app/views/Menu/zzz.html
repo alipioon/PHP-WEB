@@ -1,0 +1,27 @@
+<div id="left-sidebar" class="col-md-2">
+    <ul class="nav nav-pills nav-stacked">
+    <?php foreach($_POST as $category): ?>
+        <!-- <?php print_r($category); ?> -->
+
+        <li role="presentation">
+            <a href="#"> <?= $category[0] ?>
+            <i class="glyphicon glyphicon-chevron-right"></i></a>
+
+           <!-- <?php if($subCategories): ?> ///////verifica se a variável está vazia////////
+            <ul>
+                <?php foreach($subCategories as $subCategory): ?>
+                    <?php if($subCategory['category']['category_name'] == $category): ?>
+                        <li role="presentation">
+                            <a href="#"> <?= $subCategory['sub_category_name'] ?></a>
+                        </li>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </ul>
+          <?php endif; ?>////fim do if////
+     -->
+        </li>
+    
+    
+    <?php endforeach; ?>
+    </ul>
+</div>
